@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	#page(data-role='page')
+		div(style="margin-left: 60px;")
+			a#forward(href='#', data-role='button', data-inline='true', data-theme='b') Forward
+		br
+		div
+			a#left(href='#', data-role='button', data-inline='true', data-theme='b') Left
+			select#led(name='led', data-role='slider')
+				option(value='off') Off
+				option(value='on') On	
+			a#right(href='#', data-role='button', data-inline='true', data-theme='b') Right
+		br
+		div(style="margin-left: 80px;")
+			a#back(href='#', data-role='button', data-inline='true', data-theme='b') Back
