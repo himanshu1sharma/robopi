@@ -3,52 +3,52 @@ $(document).ready(function() {
 
 var socket = io.connect('http://localhost');
 
-$('#forward').click(function() {
+$('#forward').mousedown(function() {
 
     socket.emit('turnOn', { pin:11 });
     socket.emit('turnOn', { pin:15 });
 
     });
 
-$('#forward').mouseleave(function() {
+$('#forward').mouseup(function() {
     socket.emit('turnOff', { pin:11 });
     socket.emit('turnOff', { pin:15 });
     
     });
 
-$('#left').click(function() {
+$('#left').mousedown(function() {
 
     socket.emit('turnOn', { pin:12 });
     socket.emit('turnOn', { pin:15 });
 
     });
 
-$('#left').mouseleave(function() {
+$('#left').mouseup(function() {
     socket.emit('turnOff', { pin:12 });
     socket.emit('turnOff', { pin:15 });
     
     });
-$('#right').click(function() {
+$('#right').mousedown(function() {
 
     socket.emit('turnOn', { pin:11 });
     socket.emit('turnOn', { pin:16 });
 
     });
 
-$('#right').mouseleave(function() {
+$('#right').mouseup(function() {
     socket.emit('turnOff', { pin:11 });
     socket.emit('turnOff', { pin:16 });
     
     });
 
-$('#back').click(function() {
+$('#back').mousedown(function() {
 
     socket.emit('turnOn', { pin:12 });
     socket.emit('turnOn', { pin:16 });
 
     });
 
-$('#back').mouseleave(function() {
+$('#back').mouseup(function() {
     socket.emit('turnOff', { pin:12 });
     socket.emit('turnOff', { pin:16 });
     
