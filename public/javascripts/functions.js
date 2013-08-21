@@ -16,6 +16,12 @@ $('#forward').mouseup(function() {
     
     });
 
+$('#forward').mouseleave(function() {
+    socket.emit('turnOff', { pin:11 });
+    socket.emit('turnOff', { pin:15 });
+    
+    });
+
 $('#left').mousedown(function() {
 
     socket.emit('turnOn', { pin:12 });
@@ -28,6 +34,13 @@ $('#left').mouseup(function() {
     socket.emit('turnOff', { pin:15 });
     
     });
+
+
+$('#left').mouseleave(function() {
+    socket.emit('turnOff', { pin:12 });
+    socket.emit('turnOff', { pin:15 });
+    
+    });
 $('#right').mousedown(function() {
 
     socket.emit('turnOn', { pin:11 });
@@ -36,6 +49,11 @@ $('#right').mousedown(function() {
     });
 
 $('#right').mouseup(function() {
+    socket.emit('turnOff', { pin:11 });
+    socket.emit('turnOff', { pin:16 });
+    
+    });
+$('#right').mouseleave(function() {
     socket.emit('turnOff', { pin:11 });
     socket.emit('turnOff', { pin:16 });
     
@@ -53,6 +71,12 @@ $('#back').mouseup(function() {
     socket.emit('turnOff', { pin:16 });
     
     });
+$('#back').mouseleave(function() {
+    socket.emit('turnOff', { pin:12 });
+    socket.emit('turnOff', { pin:16 });
+    
+    });
+
 
 $('select#led').change(function() {
     value = $("#led").val();
